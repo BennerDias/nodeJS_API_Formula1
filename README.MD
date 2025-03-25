@@ -1,81 +1,69 @@
-<div align="center">
+# API Formula 1 - Node.js
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+## 📌 Sobre o Projeto
+Este projeto é uma API minimalista desenvolvida em **Node.js** para fornecer informações sobre a Fórmula 1, incluindo pilotos, equipes, corridas e estatísticas. A API retorna dados no formato JSON e pode ser usada para projetos pessoais ou integrações.
 
-</div>
+## 🚀 Tecnologias Utilizadas
+- **Node.js** - Ambiente de execução JavaScript
+- **Fastify.js** - Framework minimalista para APIs
+- **Cors** - Middleware para habilitar requisições de diferentes origens
+- **Axios** - Para consumir dados externos (se aplicável)
 
-<br />
-
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
-
-</div>
-
-# 🚀 Technologies
-
-This code source was developed with the following items:
-
-### 📦 Dependencies
-
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
-
-### 📄 Files
-
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
-
-### ⚡ Scripts
-
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
-
-# 👨‍💻 How To Use
-
-click in **[Use this template]** OR
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+## 📦 Instalação e Execução
+### 1️⃣ Clone este repositório:
+```sh
+git clone https://github.com/BennerDias/nodeJS_API_Formula1.git
 ```
 
-## Author
+### 2️⃣ Acesse a pasta do projeto:
+```sh
+cd nodeJS_API_Formula1
+```
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+### 3️⃣ Instale as dependências:
+```sh
+npm install
+```
 
-# Credits
+### 4️⃣ Execute o servidor:
+```sh
+npm start
+```
 
-icons by [Pino Lamanna][dribble-icon]
+O servidor será iniciado na porta definida no código (padrão: **3000**). Você pode acessar via **http://localhost:3000**.
 
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+## 📡 Rotas da API
+| Método | Rota               | Descrição                                      |
+|--------|-------------------|--------------------------------|
+| GET    | `/drivers`        | Retorna a lista de pilotos de F1  |
+| GET    | `/escuderias`        | Retorna a lista de equipes de F1  |
+| GET    | `/races`       | Retorna informações sobre corridas |
+| GET    | `/classificacao`  | Retorna a classificação atual da F1 | (Função ainda não implementada)
+
+## 📌 Exemplo de Requisição
+### 🔹 Obter Lista de Pilotos
+```sh
+curl -X GET http://localhost:3000/pilotos
+```
+#### 🔹 Resposta JSON:
+```json
+[
+  {
+    "id": 1,
+    "nome": "Lewis Hamilton",
+    "equipe": "Mercedes",
+  },
+  {
+    "id": 2,
+    "nome": "Max Verstappen",
+    "equipe": "Red Bull Racing",
+  }
+]
+```
+
+## 📜 Licença
+Este projeto está licenciado sob a licença **MIT**. Sinta-se à vontade para usá-lo e modificá-lo! 🏎️💨
+
+---
+📌 **Criado por [Benner Dias](https://github.com/BennerDias)**
+
